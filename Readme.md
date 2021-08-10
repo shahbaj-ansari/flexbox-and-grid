@@ -8,13 +8,16 @@
 ## Contents :
 * Background 
 * Basic Concept about CSS Flexbox
-* Flexbox Properties
-* Bibliography
+* Properties of Flexbox Container
+* Properties of Flexbox Items
+
 ---
 ## Background 
 The Flexible Box Module provides us a more efficient way to lay-out, align and distribute space among items in a container, even when their size is unknown and/or dynamic (thus the word “flex”).
 
 The main idea behind the flex layout is to give the container the ability to alter its items’ width/height and order to best fill the available space mostly to accommodate to all kind of display devices and screen sizes.
+
+---
 
 ## Basic Concept about CSS Flexbox 
 A Flexbox has a set of properties some of them are meant to be set on Flexbox Container to set the behaviour of its child and some are meant to be set on its Child (Flex Items) to set the behaviour of any child.
@@ -36,7 +39,8 @@ The new flex items start from main start and move towards main end.
 cross size.  
 * **cross start and cross end :**
 If flex-line has occupied full main size then the new flex line will start at cross start and succesive flex-lines will move towards cross end.
-![Flexbox](https://css-tricks.com/wp-content/uploads/2018/11/00-basic-terminology.svg)
+
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/00-basic-terminology.svg" width="70%" >
 ---
 ## **Flexbox Container Properties** 
 
@@ -60,7 +64,7 @@ This property defines in which direction the container wants to place the flex i
   flex-direction: row | row-reverse | column | column-reverse;
 }
 ```
-![flex-direction](https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg)
+<img src="https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg" width="60%">
 
 ### **flex-wrap**
 The flex-wrap property specifies whether the flex items should wrap or not.
@@ -165,15 +169,15 @@ The align-self property overrides the default alignment set by the container's a
 # CSS Grid
 ## Contents :
 * Background 
-* Basic Concept about CSS Grid
-* Properties
-* Bibliography
+* Properties of Grid Container
+* Properties of Grid Items
 ---
 
 ## Background
 The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages.
 CSS Grid Layout excels at dividing a page into major regions or defining the relationship in terms of size, position, and layer.
 
+---
 ## Properties of CSS Grid Container
 An HTML element becomes a grid container when its display property is set to grid or inline-grid.
 ```css
@@ -193,7 +197,7 @@ If we want our grid layout to contain 4 columns,we should specify the width of t
   grid-template-columns: auto auto auto auto;
 }
 ```
-
+---
 ### **grid-template-rows**
 The grid-template-rows property defines the height of each row.The value is a space-separated-list, where each value defines the height of the respective row.
 ```css
@@ -202,6 +206,7 @@ The grid-template-rows property defines the height of each row.The value is a sp
   grid-template-rows: 80px 200px;
 }
 ```
+---
 ### **justify-content**
 The justify-content property is used to align the whole grid inside the container. To let the justify-content work the total width of grid must be less than the container's width.
 ```css
@@ -210,6 +215,7 @@ The justify-content property is used to align the whole grid inside the containe
   justify-content: space-evenly | space-around | space-between | center | start | end;
 }
 ```
+---
 ### **align-content**
 The align-content property is used to vertically align the whole grid inside the container. To let the justify-content work the total height of grid must be less than the container's height.
 ```css
@@ -218,9 +224,9 @@ The align-content property is used to vertically align the whole grid inside the
   align-content: center | space-evenly | space-around | space-between | start | end;
 }
 ```
-
+---
 ## Properties of CSS Grid Items
-
+---
 ### grid-column-start, grid-column-end, grid-row-start, grid-row-end
  These four properties are used to set the location of a grid Item, grid-column-start/grid-row-start is the line where the item begins, and grid-column-end/grid-row-end is the line where the item ends.
 ```css
@@ -231,22 +237,25 @@ The align-content property is used to vertically align the whole grid inside the
   grid-row-end: <number> | <name> | span <number> | span <name> | auto;
 }
 ```
-
+---
  * **line**: can be a number to refer to a numbered grid line, or a name to refer to a named grid line
 * **span number**: – the item will span across the provided number of grid tracks
 * **span <name>**: – the item will span across until it hits the next line with the provided name
 * **auto** – indicates auto-placement, an automatic span, or a default span of one.
 
-example;
+example
+```css
 .item-a {
   grid-column-start: 2;
   grid-column-end: five;
   grid-row-start: row1-start;
   grid-row-end: 3;
 }
-![exmple](https://css-tricks.com/wp-content/uploads/2018/11/grid-column-row-start-end-01.svg)
+```
 
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/grid-column-row-start-end-01.svg" width="60%">
 
+---
 ### grid-column, grid-row
 It is a Shorthand property for grid-column-start + grid-column-end, and grid-row-start + grid-row-end, respectively.
 ```css
@@ -262,8 +271,9 @@ Example;
   grid-row: third-line / 4; /* start from 3rd row and end before 4th row*/
 }
 ```
-![grid-columnandrow](https://css-tricks.com/wp-content/uploads/2018/11/grid-column-row.svg)
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/grid-column-row.svg" width="60%">
 
+---
 ### grid-area
 The grid-area property can be used as a shorthand property for the grid-row-start, grid-column-start, grid-row-end and the grid-column-end properties.
 
@@ -283,9 +293,9 @@ Example
   grid-area: 1 / col4-start / last-line / 6;
 }
 ```
-![grid-area](https://css-tricks.com/wp-content/uploads/2018/11/grid-area.svg)
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/grid-area.svg" width="60%">
 
-
+----
 ### justify-self
 This property aligns a grid item inside a cell along the row axis. This value applies to a grid item inside a single cell.
 
@@ -295,7 +305,6 @@ This property aligns a grid item inside a cell along the row axis. This value ap
 }
 ```
 Values:
-
 **start** – aligns the grid item to be flush with the start edge of the cell.
 
 **end** – aligns the grid item to be flush with the end edge of the cell.
@@ -309,16 +318,16 @@ Example
   justify-self: start;
 }
 ```
-![justify-start](https://css-tricks.com/wp-content/uploads/2018/11/justify-self-start.svg)
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/justify-self-start.svg" width="50%>
 
 ```css
 .item-a {
   justify-self: end;
 }
 ```
-![justify-end](https://css-tricks.com/wp-content/uploads/2018/11/justify-self-end.svg)
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/justify-self-end.svg" width="50%">
 
-
+---
 ### align-self
 This property aligns a grid item inside a cell along the column axis. This value applies to the content inside a single grid item.
 ```css
@@ -341,7 +350,7 @@ Example 1
   align-self: start;
 }
 ```
-![](https://css-tricks.com/wp-content/uploads/2018/11/align-self-start.svg)
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/align-self-start.svg" width=50%>
 
 Example 2
 ```css
@@ -349,7 +358,7 @@ Example 2
   align-self: end;
 }
 ```
-![](https://css-tricks.com/wp-content/uploads/2018/11/align-self-end.svg)
+<img src="https://css-tricks.com/wp-content/uploads/2018/11/align-self-end.svg" width="50%">
 
 Example 3
 ```css
@@ -357,5 +366,15 @@ Example 3
   align-self: center;
 }
 ```
-![](https://css-tricks.com/wp-content/uploads/2018/11/align-self-center.svg)
-## **When to Use Flexbox or Grid**
+<img src=https://css-tricks.com/wp-content/uploads/2018/11/align-self-center.svg width="50%" height="auto">
+
+---
+## **CSS Flexbox vs CSS Grid**
+
+---
+### bibliography
+[w3shools](https://www.w3schools.com/css/default.asp)
+
+[css-tricks](https://css-tricks.com/snippets)
+
+[mozila-web-docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
